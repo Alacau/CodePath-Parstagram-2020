@@ -1,0 +1,6 @@
+framework module Pods_Parstagram_CodePath_2020_Parstagram_CodePath_2020UITests {
+  umbrella header "Pods-Parstagram-CodePath-2020-Parstagram-CodePath-2020UITests-umbrella.h"
+
+  export *
+  module * { export * }
+}

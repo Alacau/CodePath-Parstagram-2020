@@ -9,6 +9,8 @@
 /* Begin PBXBuildFile section */
 		18300DE2C04029DA3BB01715 /* Pods_Parstagram_CodePath_2020_Parstagram_CodePath_2020UITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3F3094B382EB474C0167E6C7 /* Pods_Parstagram_CodePath_2020_Parstagram_CodePath_2020UITests.framework */; };
 		44BE355624B8CB8D0079FDDA /* SignInViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44BE355524B8CB8D0079FDDA /* SignInViewController.swift */; };
+		44BE355824B8CFCE0079FDDA /* FeedViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44BE355724B8CFCE0079FDDA /* FeedViewController.swift */; };
+		44BE355A24B8CFD40079FDDA /* CameraViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44BE355924B8CFD40079FDDA /* CameraViewController.swift */; };
 		44D2A0F124B8C8B0002CC67D /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44D2A0F024B8C8B0002CC67D /* AppDelegate.swift */; };
 		44D2A0F324B8C8B0002CC67D /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44D2A0F224B8C8B0002CC67D /* SceneDelegate.swift */; };
 		44D2A0F824B8C8B0002CC67D /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 44D2A0F624B8C8B0002CC67D /* Main.storyboard */; };
@@ -44,6 +46,8 @@
 		380A4E6581284C514CA6E2C6 /* Pods_Parstagram_CodePath_2020.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Parstagram_CodePath_2020.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		3F3094B382EB474C0167E6C7 /* Pods_Parstagram_CodePath_2020_Parstagram_CodePath_2020UITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Parstagram_CodePath_2020_Parstagram_CodePath_2020UITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		44BE355524B8CB8D0079FDDA /* SignInViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignInViewController.swift; sourceTree = "<group>"; };
+		44BE355724B8CFCE0079FDDA /* FeedViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeedViewController.swift; sourceTree = "<group>"; };
+		44BE355924B8CFD40079FDDA /* CameraViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CameraViewController.swift; sourceTree = "<group>"; };
 		44D2A0ED24B8C8B0002CC67D /* Parstagram-CodePath-2020.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Parstagram-CodePath-2020.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		44D2A0F024B8C8B0002CC67D /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		44D2A0F224B8C8B0002CC67D /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -129,6 +133,8 @@
 				44D2A0F024B8C8B0002CC67D /* AppDelegate.swift */,
 				44D2A0F224B8C8B0002CC67D /* SceneDelegate.swift */,
 				44BE355524B8CB8D0079FDDA /* SignInViewController.swift */,
+				44BE355724B8CFCE0079FDDA /* FeedViewController.swift */,
+				44BE355924B8CFD40079FDDA /* CameraViewController.swift */,
 				44D2A0F624B8C8B0002CC67D /* Main.storyboard */,
 				44D2A0F924B8C8B1002CC67D /* Assets.xcassets */,
 				44D2A0FB24B8C8B1002CC67D /* LaunchScreen.storyboard */,
@@ -408,7 +414,9 @@
 			buildActionMask = 2147483647;
 			files = (
 				44D2A0F124B8C8B0002CC67D /* AppDelegate.swift in Sources */,
+				44BE355A24B8CFD40079FDDA /* CameraViewController.swift in Sources */,
 				44D2A0F324B8C8B0002CC67D /* SceneDelegate.swift in Sources */,
+				44BE355824B8CFCE0079FDDA /* FeedViewController.swift in Sources */,
 				44BE355624B8CB8D0079FDDA /* SignInViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

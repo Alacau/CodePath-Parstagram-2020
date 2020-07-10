@@ -87,29 +87,128 @@
                     <connections>
                         <outlet property="emailTextField" destination="JNr-ex-xvP" id="DWN-Sn-Jiy"/>
                         <outlet property="passwordTextField" destination="BoW-DO-mHe" id="deu-Ru-dzz"/>
+                        <segue destination="i0P-99-s2A" kind="presentation" identifier="signInSegue" id="Yfs-OX-Ak4"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="JXt-T8-HST" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="-33" y="-29"/>
         </scene>
-        <!--View Controller-->
+        <!--Feed View Controller-->
         <scene sceneID="Tdb-7s-dy1">
             <objects>
-                <viewController modalPresentationStyle="fullScreen" id="yFT-we-aRf" sceneMemberID="viewController">
+                <viewController modalPresentationStyle="fullScreen" id="yFT-we-aRf" customClass="FeedViewController" customModule="Parstagram_CodePath_2020" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="AUi-bb-2w7">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <viewLayoutGuide key="safeArea" id="0tO-Nz-Yvg"/>
                     </view>
+                    <navigationItem key="navigationItem" id="yBw-ev-MIL">
+                        <barButtonItem key="rightBarButtonItem" title="Item" image="insta_camera_btn" id="8Gp-KB-8Su">
+                            <connections>
+                                <segue destination="hbl-fN-g6Q" kind="presentation" id="XYC-uq-ipT"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="TEi-ss-iMm" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="733" y="-29"/>
+            <point key="canvasLocation" x="1642.0289855072465" y="-29.464285714285712"/>
+        </scene>
+        <!--Camera View Controller-->
+        <scene sceneID="RVt-89-HNg">
+            <objects>
+                <viewController modalPresentationStyle="fullScreen" id="hbl-fN-g6Q" customClass="CameraViewController" customModule="Parstagram_CodePath_2020" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="VNm-UU-YXh">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="image_placeholder" translatesAutoresizingMaskIntoConstraints="NO" id="bOI-wj-u4o">
+                                <rect key="frame" x="20" y="64" width="374" height="256"/>
+                                <gestureRecognizers/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="256" id="lTj-e6-dAX"/>
+                                </constraints>
+                                <connections>
+                                    <outletCollection property="gestureRecognizers" destination="M0M-JJ-qTa" appends="YES" id="SSf-Vf-Gl5"/>
+                                </connections>
+                            </imageView>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="top" spacing="16" translatesAutoresizingMaskIntoConstraints="NO" id="cqB-EG-LMe">
+                                <rect key="frame" x="20" y="340" width="374" height="116.5"/>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Caption" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="UH3-fz-t9b">
+                                        <rect key="frame" x="0.0" y="0.0" width="59.5" height="20.5"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="pJj-rw-Ebi">
+                                        <rect key="frame" x="0.0" y="36.5" width="374" height="34"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                        <textInputTraits key="textInputTraits"/>
+                                    </textField>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="0bN-sf-vjT">
+                                        <rect key="frame" x="0.0" y="86.5" width="374" height="30"/>
+                                        <state key="normal" title="Submit"/>
+                                        <connections>
+                                            <action selector="handleSubmit:" destination="hbl-fN-g6Q" eventType="touchUpInside" id="rbL-19-2O0"/>
+                                        </connections>
+                                    </button>
+                                </subviews>
+                                <constraints>
+                                    <constraint firstItem="0bN-sf-vjT" firstAttribute="centerX" secondItem="cqB-EG-LMe" secondAttribute="centerX" id="6O6-aQ-ThW"/>
+                                    <constraint firstAttribute="trailing" secondItem="pJj-rw-Ebi" secondAttribute="trailing" id="vej-rg-KD8"/>
+                                </constraints>
+                            </stackView>
+                        </subviews>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <constraints>
+                            <constraint firstItem="woK-1l-ghM" firstAttribute="trailing" secondItem="bOI-wj-u4o" secondAttribute="trailing" constant="20" id="2cP-QH-JWQ"/>
+                            <constraint firstItem="cqB-EG-LMe" firstAttribute="leading" secondItem="VNm-UU-YXh" secondAttribute="leading" constant="20" id="HF3-rw-gzd"/>
+                            <constraint firstItem="cqB-EG-LMe" firstAttribute="top" secondItem="bOI-wj-u4o" secondAttribute="bottom" constant="20" id="NoO-c5-jCj"/>
+                            <constraint firstItem="bOI-wj-u4o" firstAttribute="top" secondItem="woK-1l-ghM" secondAttribute="top" constant="20" id="hj3-0T-bat"/>
+                            <constraint firstItem="woK-1l-ghM" firstAttribute="trailing" secondItem="cqB-EG-LMe" secondAttribute="trailing" constant="20" id="og5-ep-GLG"/>
+                            <constraint firstItem="bOI-wj-u4o" firstAttribute="leading" secondItem="woK-1l-ghM" secondAttribute="leading" constant="20" id="vAV-sV-BFk"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="woK-1l-ghM"/>
+                    </view>
+                    <connections>
+                        <outlet property="captionTextField" destination="pJj-rw-Ebi" id="7JZ-qH-Z9T"/>
+                        <outlet property="postImageView" destination="bOI-wj-u4o" id="8ln-xP-sDH"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="4Zq-uh-iam" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+                <tapGestureRecognizer id="M0M-JJ-qTa">
+                    <connections>
+                        <action selector="handlePostImageViewTapped:" destination="hbl-fN-g6Q" id="jdy-cw-Ihm"/>
+                    </connections>
+                </tapGestureRecognizer>
+            </objects>
+            <point key="canvasLocation" x="2403" y="-29"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="IwK-Ok-R03">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" modalPresentationStyle="fullScreen" id="i0P-99-s2A" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="Aqp-ua-R1U">
+                        <rect key="frame" x="0.0" y="44" width="414" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="yFT-we-aRf" kind="relationship" relationship="rootViewController" id="qen-x4-O6m"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="lX9-HP-YHK" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="731.8840579710145" y="-29.464285714285712"/>
         </scene>
     </scenes>
     <resources>
+        <image name="image_placeholder" width="375" height="375"/>
+        <image name="insta_camera_btn" width="25" height="25"/>
         <image name="instagram_logo" width="255" height="108"/>
     </resources>
 </document>

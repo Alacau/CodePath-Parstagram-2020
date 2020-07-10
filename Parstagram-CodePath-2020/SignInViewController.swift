@@ -7,11 +7,14 @@
 //
 
 import UIKit
+import Parse
 
 class SignInViewController: UIViewController {
 
     @IBOutlet var emailTextField: UITextField!
     @IBOutlet var passwordTextField: UITextField!
+    
+    private let user = PFUser()
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -30,10 +33,27 @@ class SignInViewController: UIViewController {
     }
     */
     @IBAction func handleSignIn(_ sender: Any) {
+        guard let email = emailTextField.text else { return }
+        guard let password = passwordTextField.text else { return }
         
+        PFUser.logInWithUsername(inBackground: email, password: password) { (user, error) in
+            if let error = error {
+                print("DEBUG: \(error.localizedDescription)")
+            }
+            self.performSegue(withIdentifier: "signInSegue", sender: nil)
+        }
     }
     
     @IBAction func handleSignUp(_ sender: Any) {
+        user.email = emailTextField.text
+        user.password = passwordTextField.text
         
+        user.signUpInBackground { (success, error) in
+            if let error = error {
+                print("DEBUG: \(error.localizedDescription)")
+                return
+            }
+            self.performSegue(withIdentifier: "signInSegue", sender: nil)
+        }
     }
 }

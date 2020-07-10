@@ -8,6 +8,7 @@
 
 import UIKit
 import AlamofireImage
+import Parse
 
 class CameraViewController: UIViewController {
 
@@ -30,7 +31,23 @@ class CameraViewController: UIViewController {
     }
     */
     @IBAction func handleSubmit(_ sender: Any) {
+        let post = PFObject(className: "Posts")
         
+        post["caption"] = captionTextField.text!
+        post["author"] = PFUser.current()
+        
+        let imageData = postImageView.image?.pngData()
+        let file = PFFileObject(data: imageData!)
+        
+        post["image"] = file
+        
+        post.saveInBackground { (success, error) in
+            if let error = error {
+                print("DEBUG: \(error.localizedDescription)")
+                return
+            }
+            self.dismiss(animated: true, completion: nil)
+        }
     }
 }
 

@@ -1,24 +1,100 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13122.16" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="16097" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13104.12"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="16087"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--View Controller-->
-        <scene sceneID="tne-QT-ifu">
+        <!--Sign In View Controller-->
+        <scene sceneID="Cfi-zA-1JN">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="ViewController" customModuleProvider="target" sceneMemberID="viewController">
-                    <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                <viewController id="dya-hS-P2t" customClass="SignInViewController" customModule="Parstagram_CodePath_2020" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="QIc-nP-btc">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" xcode11CocoaTouchSystemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
-                        <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
+                        <subviews>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="instagram_logo" translatesAutoresizingMaskIntoConstraints="NO" id="2ir-FT-DBd">
+                                <rect key="frame" x="20" y="64" width="374" height="128"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="128" id="P5q-ro-Rht"/>
+                                </constraints>
+                            </imageView>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="top" spacing="24" translatesAutoresizingMaskIntoConstraints="NO" id="nG5-Ub-mis">
+                                <rect key="frame" x="20" y="212" width="374" height="235"/>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Email" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="w0g-qv-Fad">
+                                        <rect key="frame" x="0.0" y="0.0" width="41" height="20.5"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="JNr-ex-xvP">
+                                        <rect key="frame" x="0.0" y="44.5" width="374" height="34"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                        <textInputTraits key="textInputTraits"/>
+                                    </textField>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Password" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="jc6-3q-r5d">
+                                        <rect key="frame" x="0.0" y="102.5" width="74" height="20.5"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="BoW-DO-mHe">
+                                        <rect key="frame" x="0.0" y="147" width="374" height="34"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                        <textInputTraits key="textInputTraits"/>
+                                    </textField>
+                                    <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacing="24" translatesAutoresizingMaskIntoConstraints="NO" id="cuJ-Ch-H9k">
+                                        <rect key="frame" x="0.0" y="205" width="374" height="30"/>
+                                        <subviews>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="b8Q-CA-qud">
+                                                <rect key="frame" x="0.0" y="0.0" width="175" height="30"/>
+                                                <state key="normal" title="Sign In"/>
+                                                <connections>
+                                                    <action selector="handleSignIn:" destination="dya-hS-P2t" eventType="touchUpInside" id="OKT-eT-4wk"/>
+                                                </connections>
+                                            </button>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="w0V-Mb-0KQ">
+                                                <rect key="frame" x="199" y="0.0" width="175" height="30"/>
+                                                <state key="normal" title="SIgn Up"/>
+                                                <connections>
+                                                    <action selector="handleSignUp:" destination="dya-hS-P2t" eventType="touchUpInside" id="vpS-I9-zRk"/>
+                                                </connections>
+                                            </button>
+                                        </subviews>
+                                    </stackView>
+                                </subviews>
+                                <constraints>
+                                    <constraint firstAttribute="trailing" secondItem="BoW-DO-mHe" secondAttribute="trailing" id="iEE-Lu-L3X"/>
+                                    <constraint firstAttribute="trailing" secondItem="JNr-ex-xvP" secondAttribute="trailing" id="oze-fL-9Qv"/>
+                                    <constraint firstItem="cuJ-Ch-H9k" firstAttribute="centerX" secondItem="nG5-Ub-mis" secondAttribute="centerX" id="rzg-nm-weP"/>
+                                </constraints>
+                            </stackView>
+                        </subviews>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <constraints>
+                            <constraint firstItem="A5c-Cy-dCL" firstAttribute="trailing" secondItem="nG5-Ub-mis" secondAttribute="trailing" constant="20" id="7jP-E0-9vX"/>
+                            <constraint firstItem="2ir-FT-DBd" firstAttribute="top" secondItem="A5c-Cy-dCL" secondAttribute="top" constant="20" id="Six-AY-QBb"/>
+                            <constraint firstItem="A5c-Cy-dCL" firstAttribute="trailing" secondItem="2ir-FT-DBd" secondAttribute="trailing" constant="20" id="TKZ-GA-X5C"/>
+                            <constraint firstItem="nG5-Ub-mis" firstAttribute="leading" secondItem="A5c-Cy-dCL" secondAttribute="leading" constant="20" id="eT8-QZ-XF4"/>
+                            <constraint firstItem="nG5-Ub-mis" firstAttribute="top" secondItem="2ir-FT-DBd" secondAttribute="bottom" constant="20" id="hHN-uj-hhl"/>
+                            <constraint firstItem="2ir-FT-DBd" firstAttribute="leading" secondItem="A5c-Cy-dCL" secondAttribute="leading" constant="20" id="rAT-gd-1pz"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="A5c-Cy-dCL"/>
                     </view>
+                    <connections>
+                        <outlet property="emailTextField" destination="JNr-ex-xvP" id="DWN-Sn-Jiy"/>
+                        <outlet property="passwordTextField" destination="BoW-DO-mHe" id="deu-Ru-dzz"/>
+                    </connections>
                 </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="JXt-T8-HST" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
+            <point key="canvasLocation" x="-33" y="-29"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="instagram_logo" width="255" height="108"/>
+    </resources>
 </document>
